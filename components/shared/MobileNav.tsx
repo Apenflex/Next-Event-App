@@ -20,8 +20,8 @@ const MobileNav = () => {
 				</SheetTrigger>
 				<SheetContent className="flex flex-col gap-6 bg-white md:hidden">
 					<Image src="/assets/images/logo.svg" alt="Evently Logo" width={128} height={38} />
-          <Separator className='border border-gray-50' />
-          <NavItems />
+					<Separator className="border border-gray-50" />
+					<NavItems />
 				</SheetContent>
 			</Sheet>
 		</nav>

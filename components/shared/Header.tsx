@@ -14,7 +14,7 @@ const Header = () => {
 					<Image src="/assets/images/logo.svg" alt="Evently Logo" width={128} height={38}></Image>
 				</Link>
 				<SignedIn>
-					<nav className='md:flex-between hidden w-full max-w-xs'>
+					<nav className="md:flex-between hidden w-full max-w-xs">
 						<NavItems />
 					</nav>
 				</SignedIn>
