@@ -9,7 +9,7 @@ export default async function Home() {
     query: '',
     category: '',
     page: 1,
-    limit: 6,
+    limit: 6
   })
 
   return (
@@ -49,8 +49,8 @@ export default async function Home() {
         <Collection
           data={events?.data}
           emptyTitle="No events found"
-          emptyStateSubtext='Come back later'
-          collectionType='All_Events'
+          emptyStateSubtext="Come back later"
+          collectionType="All_Events"
           limit={6}
           page={1}
           totalPages={2}

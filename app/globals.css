@@ -218,7 +218,7 @@ body {
   }
 
   .button {
-    @apply rounded-full h-[54px] p-regular-16;
+    @apply rounded-full h-[54px] p-regular-16 transition-colors duration-300;
   }
 
   .select-item {
