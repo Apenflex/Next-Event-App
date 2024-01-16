@@ -1,14 +1,17 @@
 import Collection from '@/components/shared/Collection'
 import { Button } from '@/components/ui/button'
 import { getEventsByUser } from '@/lib/actions/event.actions'
+import { SearchParamProps } from '@/types'
 import { auth } from '@clerk/nextjs'
 import Link from 'next/link'
 
-const ProfilePage = async () => {
+const ProfilePage = async ({ searchParams}: SearchParamProps) => {
   const { sessionClaims } = auth()
   const userId = sessionClaims?.userId as string
 
-  const organizedEvents = await getEventsByUser({ userId, page: 1 })
+  const eventsPage = Number(searchParams.eventsPage) || 1
+
+  const organizedEvents = await getEventsByUser({ userId, page: eventsPage })
   return (
     <>
       {/* MY TICKETS */}
@@ -59,9 +62,9 @@ const ProfilePage = async () => {
           emptyStateSubtext="Go create some now!"
           collectionType="Events_Organized"
           limit={3}
-          page={1}
+          page={eventsPage}
           urlParamName="eventsPage"
-          totalPages={2}
+          totalPages={organizedEvents?.totalPages}
         />
       </section>
     </>
